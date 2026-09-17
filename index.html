@@ -44,27 +44,41 @@
   <!-- Ambient Glow Orbs -->
   <div class="ambient-glow-cyan top-0 left-[-100px]"></div>
   <div class="ambient-glow-indigo top-[600px] right-[-100px]"></div>
-  <div class="ambient-glow-cyan top-[1600px] left-[10%]"></div>
+
+  <!-- Floating Left Social Sidebar (Inspired by reference screenshot) -->
+  <aside class="social-sidebar">
+    <a href="https://github.com/sravankumargandhe15-png" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full bg-slate-900/80 border border-white/10 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 hover:scale-110 transition-all shadow-lg" title="GitHub">
+      <i data-lucide="github" class="w-4 h-4"></i>
+    </a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full bg-slate-900/80 border border-white/10 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 hover:scale-110 transition-all shadow-lg" title="LinkedIn">
+      <i data-lucide="linkedin" class="w-4 h-4"></i>
+    </a>
+    <a href="mailto:sravankumargandhe15@gmail.com" class="p-2.5 rounded-full bg-slate-900/80 border border-white/10 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 hover:scale-110 transition-all shadow-lg" title="Email">
+      <i data-lucide="mail" class="w-4 h-4"></i>
+    </a>
+    <div class="w-px h-16 bg-gradient-to-b from-white/20 to-transparent"></div>
+  </aside>
 
   <!-- Sticky Navbar -->
-  <header class="sticky top-0 z-40 w-full border-b border-white/5 bg-[#090d16]/80 backdrop-blur-xl transition-colors">
+  <header class="sticky top-0 z-40 w-full border-b border-white/5 bg-[#090d16]/85 backdrop-blur-xl transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <!-- Brand Logo -->
       <a href="#hero" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-slate-950 font-bold text-lg shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-slate-950 font-extrabold text-lg shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
           SK
         </div>
         <div class="flex flex-col">
-          <span class="font-bold text-base sm:text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">Gandhe Sravan Kumar</span>
+          <span class="font-extrabold text-lg tracking-tight text-white group-hover:text-cyan-400 transition-colors">Gandhe Sravan Kumar</span>
           <span class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            AI & LLM Engineer
+            AI & LLM Evaluation Specialist
           </span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+      <!-- Desktop Navigation Links (Centered) -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <a href="#hero" class="hover:text-cyan-400 transition-colors">Home</a>
         <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
         <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
         <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
@@ -73,17 +87,16 @@
         <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
       </nav>
 
-      <!-- Right Action CTAs -->
+      <!-- Right CTAs -->
       <div class="hidden sm:flex items-center gap-3">
         <!-- Theme Toggle -->
-        <button id="theme-toggle" class="p-2.5 rounded-xl border border-white/10 bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-cyan-400 transition-all" aria-label="Toggle Theme">
+        <button id="theme-toggle" class="p-2.5 rounded-full border border-white/10 bg-slate-900/60 hover:bg-slate-800 text-slate-300 hover:text-cyan-400 transition-all" aria-label="Toggle Theme">
           <i id="theme-icon" data-lucide="sun" class="w-4 h-4"></i>
         </button>
 
-        <!-- Resume Download CTA -->
-        <a href="assets/docs/resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-950 hover:opacity-95 shadow-md shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5">
-          <i data-lucide="download" class="w-4 h-4"></i>
-          <span>Resume</span>
+        <!-- Hire Me Pill Button (Reference Screenshot style) -->
+        <a href="#contact" class="px-6 py-2.5 rounded-full text-sm font-bold bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-950 hover:opacity-90 shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5">
+          Hire Me
         </a>
       </div>
 
@@ -97,155 +110,114 @@
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="hidden md:hidden border-b border-white/10 bg-slate-950/95 backdrop-blur-2xl px-6 py-5 space-y-3">
+      <a href="#hero" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Home</a>
       <a href="#about" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">About</a>
       <a href="#skills" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Skills</a>
       <a href="#experience" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Experience</a>
       <a href="#projects" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Projects</a>
       <a href="#certifications" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Certifications</a>
       <a href="#contact" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Contact</a>
-      <div class="pt-3 border-t border-white/10 flex items-center justify-between">
-        <a href="assets/docs/resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="flex-1 text-center py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-sm">
-          Download Resume
+      <div class="pt-3 border-t border-white/10 flex items-center justify-between gap-3">
+        <a href="#contact" class="flex-1 text-center py-2.5 rounded-full bg-cyan-500 text-slate-950 font-bold text-sm">
+          Hire Me
+        </a>
+        <a href="assets/docs/resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="flex-1 text-center py-2.5 rounded-full border border-slate-700 text-slate-200 font-bold text-sm">
+          Resume
         </a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- HERO SECTION -->
-    <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <!-- REDESIGNED HERO SECTION (Matching Reference Screenshot 1) -->
+    <section id="hero" class="relative min-h-[90vh] flex items-center overflow-hidden pt-8 pb-20 lg:py-24">
+      
+      <!-- Integrated Background Talking Video Visual (Seamless blending, no card borders) -->
+      <div class="hero-video-container">
+        <video id="hero-background-video" class="hero-video-element" playsinline autoplay muted loop poster="assets/images/hero-image.png">
+          <source src="assets/video/avatar-talking.mp4" type="video/mp4" />
+        </video>
+        <!-- Soft gradient overlay ensuring text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#090d16] via-[#090d16]/75 to-transparent lg:w-3/5 pointer-events-none"></div>
+        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#090d16] to-transparent pointer-events-none"></div>
+      </div>
+
+      <!-- Hero Main Content Grid -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          <!-- Hero Content (Left) -->
-          <div class="lg:col-span-7 space-y-6 text-left">
-            <!-- Open to Work Badge -->
-            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-semibold tracking-wide uppercase">
+          <!-- Foreground Left Typography (7 cols) -->
+          <div class="lg:col-span-8 space-y-6 text-left lg:pl-10">
+            
+            <!-- Available Status Pill -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-cyan-300 text-xs font-bold tracking-wide uppercase shadow-lg shadow-cyan-500/10 backdrop-blur-md">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              Available for Full-time Roles & Contracts
+              Open to AI & Automation Roles
             </div>
 
-            <!-- Main Heading -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              Hi, I'm <br class="hidden sm:inline" />
-              <span class="text-gradient">Gandhe Sravan Kumar</span>
-            </h1>
+            <!-- Main Heading with Greeting -->
+            <div class="space-y-2">
+              <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight">
+                Hi, I'm <br />
+                <span class="text-gradient">Gandhe Sravan Kumar</span>
+              </h1>
+              <p class="text-xl sm:text-2xl font-bold text-slate-300 font-mono tracking-tight">
+                AI & LLM Evaluation Specialist <br class="hidden sm:inline" />
+                <span class="text-cyan-400 font-semibold">& Workflow Automation Engineer</span>
+              </p>
+            </div>
 
-            <!-- Professional Role Title -->
-            <p class="text-lg sm:text-xl font-medium text-slate-300 font-mono">
-              AI & LLM Evaluation Specialist <span class="text-cyan-400">|</span> Workflow Automation Engineer
+            <!-- Concise Description from Resume -->
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal drop-shadow-sm">
+              AI/LLM-focused engineering graduate with hands-on experience in <strong class="text-white font-semibold">LLM response evaluation, RLHF & SFT post-training, hallucination detection, and enterprise workflow automation</strong>. Evaluated 1,500+ AI responses weekly at Ethara AI and orchestrated high-volume application pipelines with 99%+ record accuracy.
             </p>
 
-            <!-- Elevator Pitch -->
-            <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
-              Engineering graduate specializing in <strong class="text-slate-200">LLM response evaluation, RLHF & SFT post-training, and automated enterprise workflows</strong>. Evaluated over <strong class="text-cyan-300 font-mono">1,500+</strong> AI responses weekly at Ethara AI, enhancing model alignment by <strong class="text-cyan-300 font-mono">35%</strong>, and orchestrated high-volume pipeline automation maintaining <strong class="text-emerald-300 font-mono">99%+</strong> database accuracy.
-            </p>
-
-            <!-- Action Buttons -->
-            <div class="pt-2 flex flex-wrap items-center gap-4">
-              <a href="#projects" class="px-6 py-3.5 rounded-xl font-bold text-sm bg-cyan-500 text-slate-950 hover:bg-cyan-400 shadow-lg shadow-cyan-500/25 transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
-                <i data-lucide="sparkles" class="w-4 h-4"></i>
-                Explore Projects
+            <!-- 3 Pill-style Action Buttons (Reference Screenshot 1 style) -->
+            <div class="pt-4 flex flex-wrap items-center gap-4">
+              <!-- View My Work (White pill) -->
+              <a href="#projects" class="px-7 py-3.5 rounded-full font-bold text-sm bg-white text-slate-950 hover:bg-slate-100 shadow-xl shadow-white/10 transition-all transform hover:-translate-y-0.5">
+                View My Work
               </a>
 
-              <a href="assets/docs/resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="px-6 py-3.5 rounded-xl font-bold text-sm border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-200 transition-all flex items-center gap-2 hover:border-cyan-500/40">
-                <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
-                Download CV
+              <!-- Contact Me (Dark pill) -->
+              <a href="#contact" class="px-7 py-3.5 rounded-full font-bold text-sm bg-slate-900/90 hover:bg-slate-800 text-white border border-white/15 transition-all transform hover:-translate-y-0.5 backdrop-blur-md">
+                Contact Me
               </a>
 
-              <a href="#contact" class="px-5 py-3.5 rounded-xl font-bold text-sm text-slate-300 hover:text-white flex items-center gap-2 transition-colors">
-                <span>Let's Connect</span>
-                <i data-lucide="arrow-right" class="w-4 h-4 text-cyan-400"></i>
+              <!-- Download Resume (Outlined pill with icon) -->
+              <a href="assets/docs/resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="px-6 py-3.5 rounded-full font-semibold text-sm border border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 transition-all flex items-center gap-2 backdrop-blur-md">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span>Download Resume</span>
               </a>
             </div>
 
-            <!-- Quick Contacts / Socials Bar -->
-            <div class="pt-4 border-t border-white/10 flex flex-wrap items-center gap-5 text-sm text-slate-400">
-              <a href="https://github.com/sravankumargandhe15-png" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
-                <i data-lucide="github" class="w-4 h-4"></i>
-                <span class="font-mono text-xs">github/sravankumargandhe15-png</span>
-              </a>
-
-              <a href="mailto:sravankumargandhe15@gmail.com" class="flex items-center gap-1.5 hover:text-cyan-400 transition-colors">
-                <i data-lucide="mail" class="w-4 h-4"></i>
-                <span class="text-xs">sravankumargandhe15@gmail.com</span>
-              </a>
-
-              <span class="flex items-center gap-1.5 text-xs text-slate-400">
+            <!-- Location & Contact Badges -->
+            <div class="pt-6 flex flex-wrap items-center gap-6 text-xs text-slate-400 font-mono">
+              <span class="flex items-center gap-1.5">
                 <i data-lucide="map-pin" class="w-4 h-4 text-cyan-400"></i>
-                <span>Warangal, Telangana</span>
+                <span>Warangal, Telangana, India</span>
+              </span>
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+                <a href="mailto:sravankumargandhe15@gmail.com" class="hover:text-cyan-300">sravankumargandhe15@gmail.com</a>
+              </span>
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="phone" class="w-4 h-4 text-cyan-400"></i>
+                <span>+91 8143159021</span>
               </span>
             </div>
+
           </div>
 
-          <!-- Hero Media Switcher & Showcase (Right) -->
-          <div class="lg:col-span-5">
-            <div class="relative mx-auto max-w-md">
-              <!-- Switcher Tabs -->
-              <div class="flex items-center justify-between p-1.5 rounded-2xl bg-slate-900/80 border border-white/10 mb-4 backdrop-blur-md">
-                <button id="media-tab-video" class="flex-1 py-2 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 border bg-cyan-500/20 text-cyan-400 border-cyan-500/40 transition-all">
-                  <i data-lucide="video" class="w-3.5 h-3.5"></i>
-                  <span>AI Video Avatar</span>
-                </button>
-                <button id="media-tab-portrait" class="flex-1 py-2 px-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 border border-transparent text-slate-400 hover:text-slate-200 transition-all">
-                  <i data-lucide="image" class="w-3.5 h-3.5"></i>
-                  <span>Stylized Portrait</span>
-                </button>
-              </div>
-
-              <!-- Media Container: Video Avatar -->
-              <div id="media-container-video" class="video-frame gradient-border bg-slate-950/70 p-2.5">
-                <div class="relative rounded-2xl overflow-hidden bg-slate-900 aspect-[16/9] sm:aspect-[4/3] flex items-center justify-center">
-                  <video id="hero-avatar-video" class="w-full h-full object-cover" playsinline loop poster="assets/images/hero-image.png">
-                    <source src="assets/video/avatar-talking.mp4" type="video/mp4" />
-                    Your browser does not support HTML5 video.
-                  </video>
-
-                  <!-- Video Overlay Controls -->
-                  <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between bg-slate-950/80 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/10 text-xs">
-                    <div class="flex items-center gap-2">
-                      <button id="video-play-btn" class="p-1.5 rounded-lg bg-cyan-500 text-slate-950 hover:bg-cyan-400 transition-colors" title="Play/Pause">
-                        <i id="play-icon" data-lucide="play" class="w-4 h-4"></i>
-                      </button>
-                      <button id="video-mute-btn" class="p-1.5 rounded-lg bg-slate-800 text-slate-200 hover:text-cyan-400 transition-colors" title="Toggle Audio">
-                        <i id="sound-icon" data-lucide="volume-2" class="w-4 h-4"></i>
-                      </button>
-                      <span class="text-slate-300 font-mono text-[11px] hidden sm:inline">"Hi, I'm Sravan Kumar..."</span>
-                    </div>
-                    <span class="px-2 py-0.5 rounded-md bg-cyan-500/20 text-cyan-300 text-[10px] font-mono border border-cyan-500/30">
-                      MiniMax / Hailuo AI
-                    </span>
-                  </div>
-                </div>
-
-                <div class="mt-3 px-2 flex items-center justify-between text-xs text-slate-400">
-                  <span class="flex items-center gap-1.5">
-                    <i data-lucide="bot" class="w-3.5 h-3.5 text-cyan-400"></i>
-                    AI Generated Greeting Persona
-                  </span>
-                  <span class="font-mono text-cyan-400">Active Stream</span>
-                </div>
-              </div>
-
-              <!-- Media Container: Portrait Image (Initially Hidden) -->
-              <div id="media-container-portrait" class="hidden video-frame gradient-border bg-slate-950/70 p-2.5">
-                <div class="relative rounded-2xl overflow-hidden bg-slate-900 aspect-[16/9] sm:aspect-[4/3]">
-                  <img src="assets/images/hero-image.png" alt="Gandhe Sravan Kumar" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-                  <div class="absolute bottom-3 left-3 right-3 text-left">
-                    <p class="font-bold text-white text-base">Gandhe Sravan Kumar</p>
-                    <p class="text-xs text-cyan-300 font-mono">B.Tech ECE Graduate & AI Practitioner</p>
-                  </div>
-                </div>
-                <div class="mt-3 px-2 flex items-center justify-between text-xs text-slate-400">
-                  <span class="flex items-center gap-1.5">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-400"></i>
-                    Digital Stylized Illustration
-                  </span>
-                  <span class="font-mono text-slate-400">Warangal, India</span>
-                </div>
-              </div>
-
+          <!-- Bottom-Right Floating Play Reel / Audio Button (Reference Screenshot 1 style) -->
+          <div class="lg:col-span-4 flex justify-end items-end relative h-48 lg:h-96 pointer-events-none">
+            <div class="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 flex flex-col items-center gap-2">
+              <button id="play-reel-btn" class="play-reel-btn group" title="Click to hear audio greeting">
+                <i id="reel-icon" data-lucide="play" class="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform fill-cyan-400/20"></i>
+              </button>
+              <span id="reel-label" class="text-[10px] font-mono tracking-widest text-cyan-300 uppercase font-bold drop-shadow">
+                PLAY REEL
+              </span>
             </div>
           </div>
 
@@ -262,7 +234,7 @@
           <div class="glass-panel p-6 rounded-2xl glow-card border border-white/5 relative overflow-hidden group">
             <div class="absolute top-0 right-0 w-24 h-24 bg-cyan-500/10 rounded-full blur-xl group-hover:bg-cyan-500/20 transition-all"></div>
             <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Scale & Throughput</span>
+              <span class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Weekly Scale</span>
               <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
             </div>
             <div class="text-3xl sm:text-4xl font-extrabold font-mono text-white tracking-tight">1,500+</div>
@@ -277,7 +249,7 @@
               <i data-lucide="trending-up" class="w-4 h-4 text-indigo-400"></i>
             </div>
             <div class="text-3xl sm:text-4xl font-extrabold font-mono text-white tracking-tight">+35%</div>
-            <p class="text-xs text-slate-400 mt-2 font-medium">Improvement in consistency & reasoning via RLHF / SFT</p>
+            <p class="text-xs text-slate-400 mt-2 font-medium">Consistency & alignment gain via systematic RLHF & SFT</p>
           </div>
 
           <!-- Metric 3 -->
@@ -295,123 +267,116 @@
           <div class="glass-panel p-6 rounded-2xl glow-card border border-white/5 relative overflow-hidden group">
             <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full blur-xl group-hover:bg-purple-500/20 transition-all"></div>
             <div class="flex items-center justify-between mb-2">
-              <span class="text-xs font-mono text-purple-400 uppercase tracking-wider">Operational Audit</span>
+              <span class="text-xs font-mono text-purple-400 uppercase tracking-wider">Database Accuracy</span>
               <i data-lucide="database" class="w-4 h-4 text-purple-400"></i>
             </div>
             <div class="text-3xl sm:text-4xl font-extrabold font-mono text-white tracking-tight">99%+</div>
-            <p class="text-xs text-slate-400 mt-2 font-medium">Database accuracy across Workday, Greenhouse & SAP pipelines</p>
+            <p class="text-xs text-slate-400 mt-2 font-medium">Record fidelity across Workday, Greenhouse & SAP pipelines</p>
           </div>
 
         </div>
       </div>
     </section>
-    <!-- ABOUT & CORE STRENGTHS SECTION -->
+    <!-- REDESIGNED ABOUT SECTION (Matching Reference Screenshot 2) -->
     <section id="about" class="py-20 border-t border-white/5 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Background & Philosophy</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Bridging AI Post-Training & Enterprise Automation
-          </h2>
-          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-            A specialized engineer operating at the convergence of Large Language Model evaluation, quality assurance protocols, and automated data operations pipelines.
-          </p>
-        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Column: Hanging ID-Badge Stylized Portrait (Reference Screenshot 2 style) -->
+          <div class="lg:col-span-5 flex flex-col items-center">
+            <div class="relative w-full max-w-sm">
+              <!-- Lanyard Clip / Strap Assembly -->
+              <div class="lanyard-clamp"></div>
+              <div class="lanyard-strap"></div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <!-- Narrative Bio (7 cols) -->
-          <div class="lg:col-span-7 space-y-6">
-            <div class="glass-panel p-8 rounded-3xl border border-white/10 space-y-5">
-              <h3 class="text-xl font-bold text-white flex items-center gap-3">
-                <i data-lucide="user" class="w-5 h-5 text-cyan-400"></i>
-                Professional Background
-              </h3>
-
-              <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-                I am an Electronics & Communication Engineering graduate from <strong class="text-white">Kakatiya Institute of Technology & Science (KITS)</strong>, Warangal. My core expertise is situated at the intersection of <strong class="text-cyan-300">LLM post-training alignment</strong> and <strong class="text-indigo-300">automated data infrastructure</strong>.
-              </p>
-
-              <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-                In my role as an <strong class="text-white">LLM Post-Training Intern / Training Specialist at Ethara AI</strong>, I evaluate and benchmark over 1,500+ model completions weekly against rigorous rubrics covering reasoning depth, factual fidelity, and instruction following. By combining systematic RLHF & SFT methodologies with regex-based data validation, I helped reduce hallucination rates and inconsistencies by 30%.
-              </p>
-
-              <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-                Simultaneously, through my work at <strong class="text-white">ApplyRyt</strong>, I architect and oversee high-throughput workflow automations interacting with major enterprise ATS platforms (Workday, Greenhouse, SAP SuccessFactors), safeguarding a 99%+ record fidelity rate.
-              </p>
-
-              <!-- Core Highlights -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10">
-                <div class="flex items-start gap-3">
-                  <div class="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 shrink-0">
-                    <i data-lucide="globe" class="w-4 h-4"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-white text-sm">Global Collaboration</h4>
-                    <p class="text-xs text-slate-400 mt-0.5">Partnered with US & China teams to define evidence-based AI evaluation guidelines.</p>
+              <!-- Hanging Card Frame with Stylized Portrait -->
+              <div class="hanging-badge-frame">
+                <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-slate-950">
+                  <img src="assets/images/hero-image.png" alt="Gandhe Sravan Kumar" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                  
+                  <!-- Bottom ID Badge Label -->
+                  <div class="absolute bottom-4 left-4 right-4 text-left">
+                    <p class="font-extrabold text-white text-lg tracking-tight">Gandhe Sravan Kumar</p>
+                    <p class="text-xs text-cyan-300 font-mono">B.Tech (ECE) • AI Alignment Engineer</p>
+                    <p class="text-[11px] text-slate-400 font-mono mt-0.5">Warangal, Telangana, India</p>
                   </div>
                 </div>
 
-                <div class="flex items-start gap-3">
-                  <div class="p-2 rounded-xl bg-indigo-500/10 text-indigo-400 shrink-0">
-                    <i data-lucide="search" class="w-4 h-4"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-white text-sm">Hallucination Mitigation</h4>
-                    <p class="text-xs text-slate-400 mt-0.5">Applied custom Regex rules to detect and eliminate subtle reasoning drift in AI models.</p>
-                  </div>
+                <!-- Subtle ID Card Footer Bar -->
+                <div class="mt-3 px-3 py-1 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                    Verified Identity
+                  </span>
+                  <span class="text-cyan-400">GSK-2026</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Education & Credentials Card (5 cols) -->
-          <div class="lg:col-span-5 space-y-6">
-            <!-- Education Card -->
-            <div class="glass-panel p-8 rounded-3xl border border-white/10 space-y-6">
-              <h3 class="text-xl font-bold text-white flex items-center gap-3">
-                <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-400"></i>
-                Formal Education
-              </h3>
+          <!-- Right Column: "Hello!" Intro & Core Domains (Reference Screenshot 2 style) -->
+          <div class="lg:col-span-7 space-y-6 text-left">
+            
+            <!-- Big Bold "Hello!" -->
+            <h2 class="text-4xl sm:text-5xl font-black text-white tracking-tight">
+              Hello!
+            </h2>
 
-              <div class="relative pl-6 border-l-2 border-indigo-500/40 space-y-2">
-                <span class="text-xs font-mono text-indigo-400 font-semibold uppercase">Nov 2021 – May 2025</span>
-                <h4 class="text-lg font-bold text-white">Bachelor of Technology (B.Tech)</h4>
-                <p class="text-sm font-medium text-cyan-300">Electronics & Communication Engineering</p>
-                <p class="text-xs text-slate-400 leading-relaxed">
-                  Kakatiya Institute of Technology & Science (KITS), Warangal, Telangana
-                </p>
-              </div>
+            <p class="text-lg sm:text-xl text-slate-200 leading-relaxed font-normal">
+              Hi, my name is <strong class="text-white font-extrabold">GANDHE SRAVAN KUMAR</strong>, an AI/LLM evaluation specialist and workflow automation engineer based in <strong class="text-cyan-300">Warangal, India</strong>, dedicated to ensuring model fidelity, mitigating hallucinations, and architecting high-throughput operational pipelines.
+            </p>
 
-              <div class="p-4 rounded-2xl bg-slate-900/60 border border-white/5 space-y-2">
-                <p class="text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono">Foundational Disciplines</p>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-800 text-slate-300">Machine Learning</span>
-                  <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-800 text-slate-300">Microcontrollers</span>
-                  <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-800 text-slate-300">Sensor Telemetry</span>
-                  <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-800 text-slate-300">IoT & AIoT</span>
-                  <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-800 text-slate-300">Data Analytics</span>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              At <strong class="text-white font-semibold">Ethara AI</strong>, I evaluate and benchmark 1,500+ AI responses weekly across reasoning depth, structure, and instruction following, lifting model consistency and alignment by <strong class="text-cyan-300 font-mono font-bold">35%</strong>. Through custom Regex-based data cleaning, I reduced logical inconsistencies by <strong class="text-cyan-300 font-mono font-bold">30%</strong>.
+            </p>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              At <strong class="text-white font-semibold">ApplyRyt</strong>, I streamline high-volume automated application pipelines across <strong class="text-white">Workday, Greenhouse, and SAP SuccessFactors</strong>, maintaining a <strong class="text-emerald-300 font-mono font-bold">99%+</strong> database and record accuracy.
+            </p>
+
+            <!-- 3 Prominent Core Stack Badges (Reference Screenshot 2 style) -->
+            <div class="pt-4 grid grid-cols-3 gap-4 border-t border-white/10">
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 flex flex-col items-center text-center space-y-2 group hover:border-cyan-500/40 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <i data-lucide="bot" class="w-6 h-6"></i>
                 </div>
+                <span class="text-xs font-bold text-white uppercase tracking-wider">RLHF & SFT</span>
+                <span class="text-[11px] text-slate-400 font-mono">LLM Evaluation</span>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 flex flex-col items-center text-center space-y-2 group hover:border-indigo-500/40 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <i data-lucide="workflow" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-bold text-white uppercase tracking-wider">AUTOMATION</span>
+                <span class="text-[11px] text-slate-400 font-mono">Enterprise Workflows</span>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 flex flex-col items-center text-center space-y-2 group hover:border-emerald-500/40 transition-all">
+                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <i data-lucide="binary" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-bold text-white uppercase tracking-wider">DATA QA</span>
+                <span class="text-[11px] text-slate-400 font-mono">Regex & Auditing</span>
               </div>
             </div>
 
-            <!-- Quick Contact Snippet Card -->
-            <div class="glass-panel p-6 rounded-3xl border border-white/10 flex items-center justify-between">
+            <!-- Formal Education Note -->
+            <div class="p-4 rounded-2xl bg-slate-900/50 border border-white/5 flex items-start gap-3 text-xs text-slate-300">
+              <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5"></i>
               <div>
-                <p class="text-xs font-mono text-cyan-400 uppercase">Direct Email</p>
-                <p class="text-sm font-medium text-white select-all">sravankumargandhe15@gmail.com</p>
+                <p class="font-bold text-white">B.Tech in Electronics & Communication Engineering (2021 – 2025)</p>
+                <p class="text-slate-400">Kakatiya Institute of Technology & Science (KITS), Warangal, Telangana</p>
               </div>
-              <button class="copy-action-btn p-2.5 rounded-xl bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-300 transition-all" data-copy="sravankumargandhe15@gmail.com" data-label="Email" title="Copy Email">
-                <i data-lucide="copy" class="w-4 h-4"></i>
-              </button>
             </div>
+
           </div>
 
         </div>
       </div>
     </section>
-
     <!-- TECHNICAL SKILLS MATRIX SECTION -->
     <section id="skills" class="py-20 border-t border-white/5 relative bg-slate-950/40">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -423,7 +388,7 @@
             Skills & Competency Matrix
           </h2>
           <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Categorized overview of engineering tools, AI alignment frameworks, enterprise platforms, and automation methodologies.
+            Categorized overview of engineering tools, AI alignment frameworks, enterprise platforms, and automation methodologies from verified resume.
           </p>
 
           <!-- Interactive Filter Tabs -->
@@ -496,7 +461,6 @@
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Data Validation</span>
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Anomaly Detection</span>
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Records Management</span>
-              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Forensic Technology</span>
             </div>
           </div>
 
@@ -517,7 +481,6 @@
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Workflow Optimization</span>
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Pipeline Management</span>
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Automated Job Sourcing</span>
-              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Error Elimination</span>
             </div>
           </div>
 
@@ -557,7 +520,6 @@
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">MS Excel (Pivot Tables, VLOOKUP)</span>
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Custom Spreadsheet Formulas</span>
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Google Workspace (Sheets, Docs, Forms)</span>
-              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Git & GitHub Version Control</span>
             </div>
           </div>
 
@@ -575,22 +537,22 @@
             <div class="flex flex-wrap gap-2">
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Machine Learning</span>
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-rose-500/20 text-rose-300 border border-rose-500/30">Microcontrollers</span>
-              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-rose-500/20 text-rose-300 border border-rose-500/30">Sensors & Telemetry</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-rose-500/20 text-rose-300 border border-rose-500/30">Sensors</span>
               <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">Internet of Things (IoT)</span>
-              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800/80 border border-white/5 text-slate-200">AIoT Architectures (Boeing/NITW)</span>
             </div>
           </div>
 
         </div>
       </div>
     </section>
+
     <!-- PROFESSIONAL EXPERIENCE SECTION -->
     <section id="experience" class="py-20 border-t border-white/5 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Career Trajectory</span>
+          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">Career History</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Professional Experience
           </h2>
@@ -619,15 +581,15 @@
             <ul class="space-y-3 text-slate-300 text-sm leading-relaxed mt-5">
               <li class="flex items-start gap-3">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0"></i>
-                <span>Improved LLM consistency and alignment by <strong class="text-white">35%</strong> by evaluating and refining <strong class="text-cyan-300 font-mono">1,500+</strong> AI-generated responses weekly across reasoning, structure, and instruction-following criteria.</span>
+                <span>Improved LLM consistency and alignment by <strong class="text-white font-bold">35%</strong> by evaluating and refining <strong class="text-cyan-300 font-mono">1,500+</strong> AI-generated responses weekly across reasoning, structure, and instruction-following criteria.</span>
               </li>
               <li class="flex items-start gap-3">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0"></i>
-                <span>Reduced logical inconsistencies by <strong class="text-white">30%</strong> by applying Regex-based validation to clean raw data and identify potential AI hallucinations.</span>
+                <span>Reduced logical inconsistencies by <strong class="text-white font-bold">30%</strong> by applying Regex-based validation to clean raw data and identify potential AI hallucinations.</span>
               </li>
               <li class="flex items-start gap-3">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0"></i>
-                <span>Maintained <strong class="text-emerald-400 font-mono">96%+</strong> validation accuracy while exceeding daily throughput targets by <strong class="text-white font-mono">15%</strong> through systematic RLHF and SFT evaluation workflows.</span>
+                <span>Maintained <strong class="text-emerald-400 font-mono font-bold">96%+</strong> validation accuracy while exceeding daily throughput targets by <strong class="text-white font-mono">15%</strong> through systematic RLHF and SFT evaluation workflows.</span>
               </li>
               <li class="flex items-start gap-3">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0"></i>
@@ -644,7 +606,7 @@
               <span class="px-2.5 py-1 rounded-md text-xs bg-slate-900 text-slate-300 font-mono">SFT Evaluation</span>
               <span class="px-2.5 py-1 rounded-md text-xs bg-slate-900 text-slate-300 font-mono">Hallucination Detection</span>
               <span class="px-2.5 py-1 rounded-md text-xs bg-slate-900 text-slate-300 font-mono">Regex Filtering</span>
-              <span class="px-2.5 py-1 rounded-md text-xs bg-slate-900 text-slate-300 font-mono">Global Collaboration</span>
+              <span class="px-2.5 py-1 rounded-md text-xs bg-slate-900 text-slate-300 font-mono">Cross-Border QA</span>
             </div>
           </div>
 
@@ -666,11 +628,11 @@
             <ul class="space-y-3 text-slate-300 text-sm leading-relaxed mt-5">
               <li class="flex items-start gap-3">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
-                <span>Executed high-volume automated application workflows across <strong class="text-white">Workday, Greenhouse, and SAP SuccessFactors</strong> while maintaining consistent processing standards.</span>
+                <span>Executed high-volume automated application workflows across <strong class="text-white font-semibold">Workday, Greenhouse, and SAP SuccessFactors</strong> while maintaining consistent processing standards.</span>
               </li>
               <li class="flex items-start gap-3">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
-                <span>Maintained <strong class="text-emerald-300 font-mono">99%+</strong> database accuracy by auditing submission records and managing structured workflow-tracking data in MS Excel and Google Sheets.</span>
+                <span>Maintained <strong class="text-emerald-300 font-mono font-bold">99%+</strong> database accuracy by auditing submission records and managing structured workflow-tracking data in MS Excel and Google Sheets.</span>
               </li>
               <li class="flex items-start gap-3">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
@@ -702,7 +664,7 @@
             Featured Engineering Projects
           </h2>
           <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Real-time machine learning applications and IoT telemetry systems engineered with Python and embedded hardware.
+            Real-time machine learning applications and IoT telemetry systems engineered with Python and embedded microcontrollers.
           </p>
         </div>
 
@@ -723,30 +685,29 @@
               <h3 class="text-2xl font-bold text-white">Music Recommendation Using Facial Expressions</h3>
 
               <p class="text-slate-300 text-sm leading-relaxed">
-                Built an intelligent real-time facial-expression analysis application using Python and computer vision algorithms. The system classifies emotional expressions in real time and automatically couples expression telemetry with dynamic music playlist recommendation logic.
+                Built a real-time facial-expression analysis application using Python and machine learning to classify expressions and automatically generate matching music recommendations. Automated playlist recommendations by connecting real-time expression analysis with music-selection logic.
               </p>
 
               <div class="space-y-2 pt-2">
                 <div class="flex items-center gap-2 text-xs text-slate-300">
                   <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
-                  <span>Real-time facial expression classification model with camera feed parsing</span>
+                  <span>Real-time facial expression analysis application in Python & ML</span>
                 </div>
                 <div class="flex items-center gap-2 text-xs text-slate-300">
                   <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
-                  <span>Automated mood-to-playlist mapping algorithm for personalized music delivery</span>
+                  <span>Automated playlist recommendations coupled with expression logic</span>
                 </div>
               </div>
 
               <div class="pt-4 flex flex-wrap gap-2">
                 <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 border border-white/5 text-slate-300">Python</span>
                 <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 border border-white/5 text-slate-300">Machine Learning</span>
-                <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 border border-white/5 text-slate-300">OpenCV</span>
-                <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 border border-white/5 text-slate-300">Emotion AI</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 border border-white/5 text-slate-300">Computer Vision</span>
               </div>
             </div>
 
             <div class="p-6 bg-slate-900/60 border-t border-white/5 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-400">Real-Time ML Pipeline</span>
+              <span class="text-xs font-mono text-slate-400">Computer Vision / ML</span>
               <a href="https://github.com/sravankumargandhe15-png" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors">
                 <span>View on GitHub</span>
                 <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
@@ -759,7 +720,7 @@
             <div class="p-8 space-y-5">
               <div class="flex items-center justify-between">
                 <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
-                  IoT & Embedded Systems
+                  IoT Project
                 </span>
                 <a href="https://github.com/sravankumargandhe15-png" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors" title="View GitHub">
                   <i data-lucide="github" class="w-5 h-5"></i>
@@ -769,30 +730,29 @@
               <h3 class="text-2xl font-bold text-white">Automation in Hydroponics IoT</h3>
 
               <p class="text-slate-300 text-sm leading-relaxed">
-                Engineered an automated environmental monitoring and control system utilizing microcontrollers and calibrated sensor arrays. Designed for closed-loop soilless agriculture, enabling 24/7 continuous telemetry and real-time environmental condition adjustments.
+                Engineered an automated environmental-monitoring system using microcontrollers and sensors for real-time tracking of hydroponic conditions. Enabled continuous environmental monitoring by integrating sensor inputs with a microcontroller-based automation workflow.
               </p>
 
               <div class="space-y-2 pt-2">
                 <div class="flex items-center gap-2 text-xs text-slate-300">
                   <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
-                  <span>Real-time sensor telemetry integration for tracking water, pH & temperature</span>
+                  <span>Real-time tracking of hydroponic environmental conditions</span>
                 </div>
                 <div class="flex items-center gap-2 text-xs text-slate-300">
                   <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
-                  <span>Microcontroller-based automation triggering autonomous pump & lighting routines</span>
+                  <span>Integrated sensor inputs with microcontroller automation</span>
                 </div>
               </div>
 
               <div class="pt-4 flex flex-wrap gap-2">
-                <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 border border-white/5 text-slate-300">IoT Architecture</span>
                 <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 border border-white/5 text-slate-300">Microcontrollers</span>
                 <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 border border-white/5 text-slate-300">Sensors</span>
-                <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 border border-white/5 text-slate-300">Automation</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs bg-slate-900 border border-white/5 text-slate-300">IoT Telemetry</span>
               </div>
             </div>
 
             <div class="p-6 bg-slate-900/60 border-t border-white/5 flex items-center justify-between">
-              <span class="text-xs font-mono text-slate-400">Hardware & Telemetry</span>
+              <span class="text-xs font-mono text-slate-400">Embedded Systems & IoT</span>
               <a href="https://github.com/sravankumargandhe15-png" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
                 <span>View on GitHub</span>
                 <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
@@ -814,7 +774,7 @@
             Official Certifications & Training
           </h2>
           <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-            Directly verified certifications covering Data Analytics, Prompt Engineering, AIoT, and Digital Marketing. Click any certificate to open the high-resolution PDF preview modal.
+            Authentic certificates verified from your portfolio assets. Click any certificate to open the in-page PDF preview modal.
           </p>
         </div>
 
@@ -857,7 +817,7 @@
             </div>
           </div>
 
-          <!-- Cert 2: 1 Million Prompters (Dubai Future Foundation) -->
+          <!-- Cert 2: 1 Million Prompters -->
           <div class="glass-panel p-6 rounded-3xl glow-card border border-white/10 flex flex-col justify-between">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
@@ -1014,12 +974,12 @@
               </div>
               <h3 class="text-lg font-bold text-white">Audited Credentials</h3>
               <p class="text-xs text-slate-300 leading-relaxed">
-                All 5 credentials represent verified learning programs with formal institutional backing from Deloitte, Boeing India, NIT Warangal, Dubai Future Foundation, and Internshala.
+                All credentials represent verified learning programs with formal institutional backing from Deloitte, Boeing India, NIT Warangal, Dubai Future Foundation, and Internshala.
               </p>
             </div>
 
             <div class="pt-4 border-t border-white/5">
-              <a href="assets/docs/resume.pdf" download class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 text-xs font-bold border border-cyan-500/30 flex items-center justify-center gap-2 transition-all">
+              <a href="assets/docs/resume.pdf" download class="w-full py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-cyan-300 text-xs font-bold border border-cyan-500/30 flex items-center justify-center gap-2 transition-all">
                 <i data-lucide="file-text" class="w-4 h-4"></i>
                 <span>Download Resume CV (PDF)</span>
               </a>
@@ -1029,6 +989,7 @@
         </div>
       </div>
     </section>
+
     <!-- CONTACT & CONNECT SECTION -->
     <section id="contact" class="py-20 border-t border-white/5 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1109,9 +1070,9 @@
                 <i data-lucide="map-pin" class="w-6 h-6"></i>
               </div>
               <div>
-                <p class="text-xs font-mono text-slate-400 uppercase">Location & Relocation</p>
+                <p class="text-xs font-mono text-slate-400 uppercase">Location</p>
                 <p class="text-sm sm:text-base font-semibold text-white">Warangal, Telangana, India</p>
-                <p class="text-xs text-slate-400">Available for Remote, Hybrid & Relocation</p>
+                <p class="text-xs text-slate-400">Available for Remote & Hybrid Roles</p>
               </div>
             </div>
 
@@ -1149,7 +1110,7 @@
                   <textarea id="sender-message" rows="4" required placeholder="Hi Sravan, I would love to connect with you regarding..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-cyan-500 transition-colors"></textarea>
                 </div>
 
-                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-950 font-bold text-sm hover:opacity-95 shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2 transform hover:-translate-y-0.5">
+                <button type="submit" class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-950 font-bold text-sm hover:opacity-95 shadow-lg shadow-cyan-500/20 transition-all flex items-center justify-center gap-2 transform hover:-translate-y-0.5">
                   <i data-lucide="send" class="w-4 h-4"></i>
                   <span>Send Message</span>
                 </button>

@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const savedTheme = localStorage.getItem('sravan_portfolio_theme');
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
   const initialLight = savedTheme ? savedTheme === 'light' : false;
   applyTheme(initialLight);
 
@@ -53,80 +52,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Hero Media Switcher (Avatar Video vs Portrait) ---
-  const mediaTabVideo = document.getElementById('media-tab-video');
-  const mediaTabPortrait = document.getElementById('media-tab-portrait');
-  const mediaContainerVideo = document.getElementById('media-container-video');
-  const mediaContainerPortrait = document.getElementById('media-container-portrait');
-  const heroVideo = document.getElementById('hero-avatar-video');
-  const videoPlayBtn = document.getElementById('video-play-btn');
-  const videoMuteBtn = document.getElementById('video-mute-btn');
-  const playIcon = document.getElementById('play-icon');
-  const soundIcon = document.getElementById('sound-icon');
+  // --- Hero Video Audio Reel Controller ---
+  const heroVideo = document.getElementById('hero-background-video');
+  const playReelBtn = document.getElementById('play-reel-btn');
+  const reelIcon = document.getElementById('reel-icon');
+  const reelLabel = document.getElementById('reel-label');
 
-  if (mediaTabVideo && mediaTabPortrait) {
-    mediaTabVideo.addEventListener('click', () => {
-      mediaTabVideo.classList.add('bg-cyan-500/20', 'text-cyan-400', 'border-cyan-500/40');
-      mediaTabVideo.classList.remove('text-slate-400', 'border-transparent');
-
-      mediaTabPortrait.classList.remove('bg-cyan-500/20', 'text-cyan-400', 'border-cyan-500/40');
-      mediaTabPortrait.classList.add('text-slate-400', 'border-transparent');
-
-      mediaContainerVideo.classList.remove('hidden');
-      mediaContainerPortrait.classList.add('hidden');
+  if (heroVideo && playReelBtn) {
+    // Ensure video starts playing muted automatically
+    heroVideo.muted = true;
+    heroVideo.play().catch(e => {
+      console.log('Autoplay muted handled:', e);
     });
 
-    mediaTabPortrait.addEventListener('click', () => {
-      mediaTabPortrait.classList.add('bg-cyan-500/20', 'text-cyan-400', 'border-cyan-500/40');
-      mediaTabPortrait.classList.remove('text-slate-400', 'border-transparent');
-
-      mediaTabVideo.classList.remove('bg-cyan-500/20', 'text-cyan-400', 'border-cyan-500/40');
-      mediaTabVideo.classList.add('text-slate-400', 'border-transparent');
-
-      mediaContainerPortrait.classList.remove('hidden');
-      mediaContainerVideo.classList.add('hidden');
-
-      if (heroVideo && !heroVideo.paused) {
-        heroVideo.pause();
-        updatePlayButtonState();
-      }
-    });
-  }
-
-  function updatePlayButtonState() {
-    if (!heroVideo || !playIcon) return;
-    if (heroVideo.paused) {
-      playIcon.setAttribute('data-lucide', 'play');
-    } else {
-      playIcon.setAttribute('data-lucide', 'pause');
-    }
-    if (window.lucide) window.lucide.createIcons();
-  }
-
-  if (videoPlayBtn && heroVideo) {
-    videoPlayBtn.addEventListener('click', () => {
-      if (heroVideo.paused) {
-        heroVideo.play().catch(e => console.log('Autoplay policy caught:', e));
-      } else {
-        heroVideo.pause();
-      }
-      updatePlayButtonState();
-    });
-
-    heroVideo.addEventListener('play', updatePlayButtonState);
-    heroVideo.addEventListener('pause', updatePlayButtonState);
-    heroVideo.addEventListener('ended', updatePlayButtonState);
-  }
-
-  if (videoMuteBtn && heroVideo && soundIcon) {
-    videoMuteBtn.addEventListener('click', () => {
-      heroVideo.muted = !heroVideo.muted;
+    playReelBtn.addEventListener('click', () => {
       if (heroVideo.muted) {
-        soundIcon.setAttribute('data-lucide', 'volume-x');
+        // Unmute and play
+        heroVideo.muted = false;
+        heroVideo.play().catch(e => console.log('Audio playback request:', e));
+        if (reelIcon) reelIcon.setAttribute('data-lucide', 'volume-2');
+        if (reelLabel) reelLabel.textContent = 'MUTE AUDIO';
+        showToast('Playing audio greeting: "Hi, I\'m Sravan Kumar..."');
       } else {
-        soundIcon.setAttribute('data-lucide', 'volume-2');
+        // Mute
+        heroVideo.muted = true;
+        if (reelIcon) reelIcon.setAttribute('data-lucide', 'play');
+        if (reelLabel) reelLabel.textContent = 'PLAY REEL';
       }
       if (window.lucide) window.lucide.createIcons();
+    });
+
+    heroVideo.addEventListener('ended', () => {
+      heroVideo.currentTime = 0;
+      heroVideo.play();
     });
   }
 
@@ -149,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
       skillGroups.forEach(group => {
         if (category === 'all' || group.getAttribute('data-category') === category) {
           group.style.display = 'block';
-          group.classList.add('animate-fade-in');
         } else {
           group.style.display = 'none';
         }
@@ -207,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeCertModal();
   });
 
-  // Attach modal trigger to all view-cert buttons
   document.querySelectorAll('.view-cert-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
