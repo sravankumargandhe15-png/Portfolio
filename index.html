@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
@@ -41,16 +41,31 @@
 </head>
 <body class="bg-[#090d16] text-slate-200 antialiased selection:bg-cyan-500 selection:text-slate-950 transition-colors duration-300 relative overflow-x-hidden">
 
-  <!-- Ambient Glow Orbs -->
-  <div class="ambient-glow-cyan top-0 left-[-100px]"></div>
-  <div class="ambient-glow-indigo top-[600px] right-[-100px]"></div>
+  <!-- Opening Intro Animation Screen -->
+  <div id="intro-screen">
+    <div class="text-center space-y-4 px-4">
+      <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-slate-950 font-black text-2xl shadow-xl shadow-cyan-500/30">
+        SK
+      </div>
+      <h1 class="intro-name">Gandhe Sravan Kumar</h1>
+      <p class="text-xs sm:text-sm font-mono text-cyan-400 tracking-widest uppercase">
+        AI & LLM Evaluation • Workflow Automation
+      </p>
+    </div>
+  </div>
 
-  <!-- Floating Left Social Sidebar (Inspired by reference screenshot) -->
+  <!-- Ambient Glow Orbs (Contained to prevent document horizontal overflow) -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="ambient-glow-cyan top-0 left-[-100px]"></div>
+    <div class="ambient-glow-indigo top-[600px] right-[-100px]"></div>
+  </div>
+
+  <!-- Floating Left Social Sidebar -->
   <aside class="social-sidebar">
     <a href="https://github.com/sravankumargandhe15-png" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full bg-slate-900/80 border border-white/10 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 hover:scale-110 transition-all shadow-lg" title="GitHub">
       <i data-lucide="github" class="w-4 h-4"></i>
     </a>
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full bg-slate-900/80 border border-white/10 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 hover:scale-110 transition-all shadow-lg" title="LinkedIn">
+    <a href="https://www.linkedin.com/in/sravankumar-gandhe/" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full bg-slate-900/80 border border-white/10 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 hover:scale-110 transition-all shadow-lg" title="LinkedIn Profile">
       <i data-lucide="linkedin" class="w-4 h-4"></i>
     </a>
     <a href="mailto:sravankumargandhe15@gmail.com" class="p-2.5 rounded-full bg-slate-900/80 border border-white/10 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 hover:scale-110 transition-all shadow-lg" title="Email">
@@ -77,7 +92,7 @@
       </a>
 
       <!-- Desktop Navigation Links (Centered) -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-slate-300">
         <a href="#hero" class="hover:text-cyan-400 transition-colors">Home</a>
         <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
         <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
@@ -94,22 +109,22 @@
           <i id="theme-icon" data-lucide="sun" class="w-4 h-4"></i>
         </button>
 
-        <!-- Hire Me Pill Button (Reference Screenshot style) -->
+        <!-- Hire Me Pill Button -->
         <a href="#contact" class="px-6 py-2.5 rounded-full text-sm font-bold bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-950 hover:opacity-90 shadow-lg shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5">
           Hire Me
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <div class="flex items-center gap-2 md:hidden">
-        <button id="mobile-menu-btn" class="p-2.5 rounded-xl border border-white/10 bg-slate-900/60 text-slate-300 hover:text-cyan-400 focus:outline-none">
+      <div class="flex items-center gap-2 lg:hidden">
+        <button id="mobile-menu-btn" class="p-2.5 rounded-xl border border-white/10 bg-slate-900/60 text-slate-300 hover:text-cyan-400 focus:outline-none" aria-label="Toggle Navigation Menu">
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
       </div>
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-b border-white/10 bg-slate-950/95 backdrop-blur-2xl px-6 py-5 space-y-3">
+    <div id="mobile-menu" class="hidden lg:hidden border-b border-white/10 bg-slate-950/95 backdrop-blur-2xl px-6 py-5 space-y-3">
       <a href="#hero" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Home</a>
       <a href="#about" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">About</a>
       <a href="#skills" class="block py-2 text-slate-300 hover:text-cyan-400 font-medium">Skills</a>
@@ -121,7 +136,7 @@
         <a href="#contact" class="flex-1 text-center py-2.5 rounded-full bg-cyan-500 text-slate-950 font-bold text-sm">
           Hire Me
         </a>
-        <a href="assets/docs/resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="flex-1 text-center py-2.5 rounded-full border border-slate-700 text-slate-200 font-bold text-sm">
+        <a href="assets/docs/G.Sravan Kumar__Resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="flex-1 text-center py-2.5 rounded-full border border-slate-700 text-slate-200 font-bold text-sm">
           Resume
         </a>
       </div>
@@ -129,25 +144,24 @@
   </header>
 
   <main>
-    <!-- REDESIGNED HERO SECTION (Matching Reference Screenshot 1) -->
-    <section id="hero" class="relative min-h-[90vh] flex items-center overflow-hidden pt-8 pb-20 lg:py-24">
+    <!-- FINAL HERO SECTION: CINEMATIC FULL VIDEO BACKGROUND + HANGING ID-CARD PORTRAIT -->
+    <section id="hero" class="hero-wrapper relative min-h-[92vh] flex items-center overflow-hidden pt-6 pb-28 lg:py-24">
       
-      <!-- Integrated Background Talking Video Visual (Seamless blending, no card borders) -->
-      <div class="hero-video-container">
-        <video id="hero-background-video" class="hero-video-element" playsinline autoplay muted loop poster="assets/images/hero-image.png">
-          <source src="assets/video/avatar-talking.mp4" type="video/mp4" />
+      <!-- Layer 0: Full-Bleed Cinematic Background Video (Avatar Talking.mp4) -->
+      <div class="hero-video-bg-container">
+        <video id="hero-background-video" class="hero-video-bg" playsinline autoplay muted loop poster="assets/images/hero-image.png">
+          <source src="assets/video/Avatar Talking.mp4" type="video/mp4" />
         </video>
-        <!-- Soft gradient overlay ensuring text readability -->
-        <div class="absolute inset-0 bg-gradient-to-r from-[#090d16] via-[#090d16]/75 to-transparent lg:w-3/5 pointer-events-none"></div>
-        <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#090d16] to-transparent pointer-events-none"></div>
+        <!-- Subtle Navy Gradient Overlay for Text Readability without hiding person -->
+        <div class="hero-gradient-overlay"></div>
       </div>
 
-      <!-- Hero Main Content Grid -->
+      <!-- Layer 1: Foreground Content Grid -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <!-- Foreground Left Typography (7 cols) -->
-          <div class="lg:col-span-8 space-y-6 text-left lg:pl-10">
+          <!-- Left Typography Column (7 cols) -->
+          <div class="lg:col-span-7 space-y-5 text-left lg:pr-4">
             
             <!-- Available Status Pill -->
             <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-cyan-300 text-xs font-bold tracking-wide uppercase shadow-lg shadow-cyan-500/10 backdrop-blur-md">
@@ -155,74 +169,98 @@
               Open to AI & Automation Roles
             </div>
 
-            <!-- Main Heading with Greeting -->
-            <div class="space-y-2">
-              <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight">
-                Hi, I'm <br />
-                <span class="text-gradient">Gandhe Sravan Kumar</span>
+            <!-- Main Heading with Greeting & Lightweight Outline Name -->
+            <div class="space-y-1">
+              <p class="text-xs sm:text-sm font-mono uppercase tracking-widest text-slate-300 flex items-center gap-2">
+                <span>Hello, I am</span>
+                <span class="w-8 h-px bg-cyan-400/60"></span>
+              </p>
+              <h1 class="hero-name-outline">
+                Gandhe Sravan Kumar
               </h1>
-              <p class="text-xl sm:text-2xl font-bold text-slate-300 font-mono tracking-tight">
-                AI & LLM Evaluation Specialist <br class="hidden sm:inline" />
+              <p class="text-base sm:text-xl lg:text-2xl font-bold text-slate-200 font-mono tracking-tight">
+                AI & LLM Evaluation Specialist <br />
                 <span class="text-cyan-400 font-semibold">& Workflow Automation Engineer</span>
               </p>
             </div>
 
-            <!-- Concise Description from Resume -->
-            <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal drop-shadow-sm">
+            <!-- Concise Description from Verified Resume -->
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl font-normal drop-shadow">
               AI/LLM-focused engineering graduate with hands-on experience in <strong class="text-white font-semibold">LLM response evaluation, RLHF & SFT post-training, hallucination detection, and enterprise workflow automation</strong>. Evaluated 1,500+ AI responses weekly at Ethara AI and orchestrated high-volume application pipelines with 99%+ record accuracy.
             </p>
 
-            <!-- 3 Pill-style Action Buttons (Reference Screenshot 1 style) -->
-            <div class="pt-4 flex flex-wrap items-center gap-4">
+            <!-- 3 Pill-style Action Buttons -->
+            <div class="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
               <!-- View My Work (White pill) -->
-              <a href="#projects" class="px-7 py-3.5 rounded-full font-bold text-sm bg-white text-slate-950 hover:bg-slate-100 shadow-xl shadow-white/10 transition-all transform hover:-translate-y-0.5">
+              <a href="#projects" class="px-7 py-3 rounded-full font-bold text-sm bg-white text-slate-950 hover:bg-slate-100 shadow-xl shadow-white/10 transition-all transform hover:-translate-y-0.5">
                 View My Work
               </a>
 
               <!-- Contact Me (Dark pill) -->
-              <a href="#contact" class="px-7 py-3.5 rounded-full font-bold text-sm bg-slate-900/90 hover:bg-slate-800 text-white border border-white/15 transition-all transform hover:-translate-y-0.5 backdrop-blur-md">
+              <a href="#contact" class="px-7 py-3 rounded-full font-bold text-sm bg-slate-900/90 hover:bg-slate-800 text-white border border-white/15 transition-all transform hover:-translate-y-0.5 backdrop-blur-md">
                 Contact Me
               </a>
 
               <!-- Download Resume (Outlined pill with icon) -->
-              <a href="assets/docs/resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="px-6 py-3.5 rounded-full font-semibold text-sm border border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 transition-all flex items-center gap-2 backdrop-blur-md">
+              <a href="assets/docs/G.Sravan Kumar__Resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="px-6 py-3 rounded-full font-semibold text-sm border border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/10 transition-all flex items-center gap-2 backdrop-blur-md">
                 <i data-lucide="download" class="w-4 h-4"></i>
                 <span>Download Resume</span>
               </a>
             </div>
 
-            <!-- Location & Contact Badges -->
-            <div class="pt-6 flex flex-wrap items-center gap-6 text-xs text-slate-400 font-mono">
-              <span class="flex items-center gap-1.5">
-                <i data-lucide="map-pin" class="w-4 h-4 text-cyan-400"></i>
-                <span>Warangal, Telangana, India</span>
+            <!-- Location, Email, Phone, & Verified LinkedIn Badges -->
+            <div class="pt-3 grid grid-cols-1 sm:flex sm:flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-300 font-mono">
+              <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+                <span>Warangal, Telangana</span>
               </span>
-              <span class="flex items-center gap-1.5">
-                <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
-                <a href="mailto:sravankumargandhe15@gmail.com" class="hover:text-cyan-300">sravankumargandhe15@gmail.com</a>
-              </span>
-              <span class="flex items-center gap-1.5">
-                <i data-lucide="phone" class="w-4 h-4 text-cyan-400"></i>
+              <a href="mailto:sravankumargandhe15@gmail.com" class="inline-flex items-center gap-1.5 whitespace-nowrap hover:text-cyan-300 transition-colors">
+                <i data-lucide="mail" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
+                <span>sravankumargandhe15@gmail.com</span>
+              </a>
+              <span class="inline-flex items-center gap-1.5 whitespace-nowrap">
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-cyan-400 shrink-0"></i>
                 <span>+91 8143159021</span>
               </span>
+              <a href="https://www.linkedin.com/in/sravankumar-gandhe/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 whitespace-nowrap text-cyan-400 hover:text-cyan-300 transition-colors" title="Open LinkedIn Profile">
+                <i data-lucide="linkedin" class="w-3.5 h-3.5 shrink-0"></i>
+                <span>LinkedIn</span>
+              </a>
             </div>
 
           </div>
 
-          <!-- Bottom-Right Floating Play Reel / Audio Button (Reference Screenshot 1 style) -->
-          <div class="lg:col-span-4 flex justify-end items-end relative h-48 lg:h-96 pointer-events-none">
-            <div class="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 flex flex-col items-center gap-2">
-              <button id="play-reel-btn" class="play-reel-btn group" title="Click to hear audio greeting">
-                <i id="reel-icon" data-lucide="play" class="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform fill-cyan-400/20"></i>
-              </button>
-              <span id="reel-label" class="text-[10px] font-mono tracking-widest text-cyan-300 uppercase font-bold drop-shadow">
-                PLAY REEL
-              </span>
+          <!-- Right Column: Hanging ID-Card / Device Portrait (5 cols) -->
+          <div class="lg:col-span-5 flex justify-center lg:justify-end items-start relative z-10 pt-2 lg:pt-0">
+            <div class="hanging-assembly-container">
+              <!-- Suspension Thread/Cord -->
+              <div class="hanging-cord"></div>
+              <!-- Metallic Lanyard Clip Anchor -->
+              <div class="hanging-clip-anchor"></div>
+              
+              <!-- Hanging Device / Card Frame (Slight 3D depth, subtle sway, clean portrait visual) -->
+              <div class="hanging-device-card">
+                <!-- Slender Lanyard Slot Hole -->
+                <div class="hanging-device-slot"></div>
+                <!-- Stylized Portrait Image (Hero Image.png) -->
+                <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-950/60 shadow-inner">
+                  <img src="assets/images/hero-image.png" alt="Gandhe Sravan Kumar — Stylized Portrait" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" />
+                </div>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
+
+      <!-- ONE Circular Play / Pause Controller at Bottom-Right of Hero -->
+      <div class="play-pause-container">
+        <button id="play-pause-btn" class="play-pause-btn group" aria-label="Toggle Hero Video Play/Pause" title="Click to Pause / Play Background Reel">
+          <i id="play-pause-icon" data-lucide="pause" class="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform"></i>
+        </button>
+        <span id="play-pause-label" class="play-pause-label">PAUSE</span>
+      </div>
+
     </section>
 
     <!-- IMPACT METRICS COUNTER BAR -->
@@ -979,7 +1017,7 @@
             </div>
 
             <div class="pt-4 border-t border-white/5">
-              <a href="assets/docs/resume.pdf" download class="w-full py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-cyan-300 text-xs font-bold border border-cyan-500/30 flex items-center justify-center gap-2 transition-all">
+              <a href="assets/docs/G.Sravan Kumar__Resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="w-full py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 text-cyan-300 text-xs font-bold border border-cyan-500/30 flex items-center justify-center gap-2 transition-all">
                 <i data-lucide="file-text" class="w-4 h-4"></i>
                 <span>Download Resume CV (PDF)</span>
               </a>
@@ -1064,6 +1102,24 @@
               </a>
             </div>
 
+            <!-- LinkedIn Card -->
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 flex items-center justify-between group">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-mono text-slate-400 uppercase">LinkedIn Profile</p>
+                  <a href="https://www.linkedin.com/in/sravankumar-gandhe/" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-semibold text-white hover:text-cyan-400 transition-colors">
+                    linkedin.com/in/sravankumar-gandhe
+                  </a>
+                </div>
+              </div>
+              <a href="https://www.linkedin.com/in/sravankumar-gandhe/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-300 transition-all" title="Open LinkedIn Profile">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </div>
+
             <!-- Location Card -->
             <div class="glass-panel p-6 rounded-2xl border border-white/10 flex items-center gap-4">
               <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
@@ -1138,7 +1194,8 @@
 
       <div class="flex items-center gap-6 text-xs text-slate-400 font-mono">
         <a href="#hero" class="hover:text-cyan-400 transition-colors">Back to Top ↑</a>
-        <a href="assets/docs/resume.pdf" download class="hover:text-cyan-400 transition-colors">Download CV</a>
+        <a href="https://www.linkedin.com/in/sravankumar-gandhe/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">LinkedIn</a>
+        <a href="assets/docs/G.Sravan Kumar__Resume.pdf" download="Gandhe_Sravan_Kumar_Resume.pdf" class="hover:text-cyan-400 transition-colors">Download CV</a>
         <a href="https://github.com/sravankumargandhe15-png/Portfolio" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">GitHub Repo</a>
       </div>
     </div>

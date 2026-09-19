@@ -1,4 +1,4 @@
-﻿# Gandhe Sravan Kumar — Developer Portfolio
+# Gandhe Sravan Kumar — Developer Portfolio
 
 Welcome to the personal developer portfolio repository of **Gandhe Sravan Kumar**, an **AI & LLM Evaluation Specialist** and **Workflow Automation Engineer**.
 
@@ -46,9 +46,9 @@ Portfolio/
     ├── images/
     │   └── hero-image.png     # Stylized portrait illustration
     ├── video/
-    │   └── avatar-talking.mp4 # AI greeting video
+    │   └── Avatar Talking.mp4 # Talking-avatar video (Full HD)
     ├── docs/
-    │   └── resume.pdf         # Canonical resume (PDF)
+    │   └── G.Sravan Kumar__Resume.pdf # Canonical resume (PDF)
     └── certs/
         ├── deloitte-data-analytics.pdf
         ├── 1-million-prompters.pdf

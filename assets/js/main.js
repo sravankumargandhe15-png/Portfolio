@@ -1,4 +1,4 @@
-﻿// Gandhe Sravan Kumar - Portfolio Interactive Scripts
+// Gandhe Sravan Kumar - Portfolio Interactive Scripts
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize Lucide Icons
@@ -6,7 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 
-  // --- Theme Management ---
+  // --- 1. Opening Intro Animation ---
+  const introScreen = document.getElementById('intro-screen');
+  if (introScreen) {
+    setTimeout(() => {
+      introScreen.classList.add('intro-done');
+      document.body.setAttribute('data-intro-complete', 'true');
+    }, 1300);
+  }
+
+  // --- 2. Theme Management ---
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
 
@@ -36,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Mobile Menu Toggle ---
+  // --- 3. Mobile Menu Toggle ---
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
@@ -52,43 +61,70 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Hero Video Audio Reel Controller ---
+  // --- 4. Hero Background Video Controller (Play / Pause Reel) ---
   const heroVideo = document.getElementById('hero-background-video');
-  const playReelBtn = document.getElementById('play-reel-btn');
-  const reelIcon = document.getElementById('reel-icon');
-  const reelLabel = document.getElementById('reel-label');
+  const playPauseBtn = document.getElementById('play-pause-btn');
+  const playPauseIcon = document.getElementById('play-pause-icon');
+  const playPauseLabel = document.getElementById('play-pause-label');
 
-  if (heroVideo && playReelBtn) {
-    // Ensure video starts playing muted automatically
+  function setButtonStatePlaying() {
+    if (playPauseIcon) playPauseIcon.setAttribute('data-lucide', 'pause');
+    if (playPauseLabel) playPauseLabel.textContent = 'PAUSE';
+    if (window.lucide) window.lucide.createIcons();
+  }
+
+  function setButtonStatePaused() {
+    if (playPauseIcon) playPauseIcon.setAttribute('data-lucide', 'play');
+    if (playPauseLabel) playPauseLabel.textContent = 'PLAY REEL';
+    if (window.lucide) window.lucide.createIcons();
+  }
+
+  if (heroVideo && playPauseBtn) {
+    // Start muted autoplay loop
     heroVideo.muted = true;
-    heroVideo.play().catch(e => {
+    heroVideo.play().then(() => {
+      setButtonStatePlaying();
+    }).catch(e => {
       console.log('Autoplay muted handled:', e);
+      setButtonStatePaused();
     });
 
-    playReelBtn.addEventListener('click', () => {
-      if (heroVideo.muted) {
-        // Unmute and play
+    // Toggle button behavior
+    playPauseBtn.addEventListener('click', () => {
+      if (heroVideo.paused) {
+        // Attempt unmuted play for audio greeting, fallback to muted if blocked
         heroVideo.muted = false;
-        heroVideo.play().catch(e => console.log('Audio playback request:', e));
-        if (reelIcon) reelIcon.setAttribute('data-lucide', 'volume-2');
-        if (reelLabel) reelLabel.textContent = 'MUTE AUDIO';
-        showToast('Playing audio greeting: "Hi, I\'m Sravan Kumar..."');
+        const playPromise = heroVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            setButtonStatePlaying();
+            showToast('Playing greeting: "Hi, I\'m Shravan Kumar..."');
+          }).catch(err => {
+            console.warn('Unmuted playback restricted, falling back to muted play:', err);
+            heroVideo.muted = true;
+            heroVideo.play().then(() => {
+              setButtonStatePlaying();
+            }).catch(e => {
+              console.error('Fallback playback failed:', e);
+              setButtonStatePaused();
+            });
+          });
+        }
       } else {
-        // Mute
-        heroVideo.muted = true;
-        if (reelIcon) reelIcon.setAttribute('data-lucide', 'play');
-        if (reelLabel) reelLabel.textContent = 'PLAY REEL';
+        heroVideo.pause();
+        setButtonStatePaused();
       }
-      if (window.lucide) window.lucide.createIcons();
     });
 
+    heroVideo.addEventListener('play', setButtonStatePlaying);
+    heroVideo.addEventListener('pause', setButtonStatePaused);
     heroVideo.addEventListener('ended', () => {
       heroVideo.currentTime = 0;
       heroVideo.play();
     });
   }
 
-  // --- Skills Filter Tabs ---
+  // --- 5. Skills Filter Tabs ---
   const skillTabs = document.querySelectorAll('.skill-tab-btn');
   const skillGroups = document.querySelectorAll('.skill-group-card');
 
@@ -114,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- PDF & Certificate Modal Viewer ---
+  // --- 6. Certificate & Document Modal Viewer ---
   const certModal = document.getElementById('cert-modal');
   const certModalClose = document.getElementById('cert-modal-close');
   const certModalTitle = document.getElementById('cert-modal-title');
@@ -176,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Copy to Clipboard Tooltip/Toast ---
+  // --- 7. Toast & Clipboard Feedback ---
   function showToast(message) {
     const toast = document.createElement('div');
     toast.className = 'fixed bottom-6 right-6 z-50 bg-cyan-500 text-slate-950 font-semibold px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 text-sm transition-all duration-300 transform translate-y-4 opacity-0';
@@ -210,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Contact Form Submission Handler ---
+  // --- 8. Contact Form Handler ---
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
 
@@ -218,14 +254,13 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('sender-name')?.value || '';
-      const email = document.getElementById('sender-email')?.value || '';
-      const subject = document.getElementById('sender-subject')?.value || 'Portfolio Contact Inquiry';
+      const subject = document.getElementById('sender-subject')?.value || 'Inquiry';
       const message = document.getElementById('sender-message')?.value || '';
 
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Sending message...`;
+        submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Preparing...`;
         if (window.lucide) window.lucide.createIcons();
       }
 
@@ -236,8 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-sm flex items-start gap-3">
               <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 mt-0.5 shrink-0"></i>
               <div>
-                <p class="font-semibold text-emerald-200">Thank you, ${name || 'there'}! Your message has been prepared.</p>
-                <p class="mt-1 text-slate-300 text-xs">You can also directly email Sravan at <a href="mailto:sravankumargandhe15@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}" class="text-cyan-400 underline font-medium">sravankumargandhe15@gmail.com</a>.</p>
+                <p class="font-semibold text-emerald-200">Thank you, ${name || 'there'}!</p>
+                <p class="mt-1 text-slate-300 text-xs">Your message is ready. You can directly reach Sravan at <a href="mailto:sravankumargandhe15@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}" class="text-cyan-400 underline font-medium">sravankumargandhe15@gmail.com</a>.</p>
               </div>
             </div>
           `;
@@ -250,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (window.lucide) window.lucide.createIcons();
         }
         contactForm.reset();
-      }, 700);
+      }, 600);
     });
   }
 });
